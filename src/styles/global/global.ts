@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         background: ${(props) => props.theme["background"]};
+        line-height: 130%;
     }
 
 `;

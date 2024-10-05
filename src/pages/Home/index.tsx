@@ -10,6 +10,9 @@ import {
 } from "./styles";
 import CoffeeCoup from "../../assets/introduction/Imagem.svg";
 import { Coffee, Package, ShoppingCart, Timer } from "@phosphor-icons/react";
+import { CardCoffee } from "../../components/CardCoffee";
+
+import ExpressoTradicional from "../../assets/coffee/Type=Expresso.png";
 
 export function Home() {
   return (
@@ -59,6 +62,11 @@ export function Home() {
 
       <CoffeeContainerList>
         <h2>Nossos cafés</h2>
+        <CardCoffee
+          title="Expresso Tradicional"
+          description="O tradicional café feito com água quente e grãos moídos"
+          image={ExpressoTradicional}
+        />
       </CoffeeContainerList>
     </HomeContainer>
   );

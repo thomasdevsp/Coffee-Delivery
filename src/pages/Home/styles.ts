@@ -31,21 +31,18 @@ export const TextContainer = styled.div`
     font-weight: bolder;
     font-size: 3.025rem;
     color: ${(props) => props.theme["base-title"]};
-    line-height: 130%;
   }
 
   h3 {
     font-family: "Roboto", sans-serif;
     font-size: 1.275rem;
     color: ${(props) => props.theme["base-subtitle"]};
-    line-height: 130%;
   }
 
   span {
     font-family: "Roboto", sans-serif;
     font-size: 1rem;
     color: ${(props) => props.theme["base-text"]};
-    line-height: 130%;
   }
 `;
 
@@ -108,6 +105,5 @@ export const CoffeeContainerList = styled.div`
     font-weight: bolder;
     font-size: 2rem;
     color: ${(props) => props.theme["base-subtitle"]};
-    line-height: 130%;
   }
 `;
