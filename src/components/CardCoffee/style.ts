@@ -4,8 +4,8 @@ export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding-bottom: 20px;
+
+  padding: 0 20px 20px 20px;
 
   border-radius: 6px 36px 6px 36px;
 
@@ -22,7 +22,16 @@ export const CardContainer = styled.div`
     color: ${(props) => props.theme["yellow-dark"]};
 
     padding: 4px;
+    margin-bottom: 10px;
     border-radius: 100px;
+  }
+
+  img {
+    max-width: 120px;
+    height: 120px;
+
+    position: relative;
+    bottom: 20px;
   }
 
   h3 {
@@ -34,14 +43,27 @@ export const CardContainer = styled.div`
 
   p {
     font-family: "Roboto", sans-serif;
+
+    text-align: center;
     font-size: 0.875rem;
+
     color: ${(props) => props.theme["base-label"]};
   }
+`;
+
+export const PropsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  gap: 8px;
 `;
 
 export const MarketContainer = styled.div`
   display: flex;
   align-items: center;
+
+  margin-top: 24px;
   gap: 8px;
 
   span {
@@ -58,20 +80,21 @@ export const MarketContainer = styled.div`
   }
 `;
 
-export const InputButtons = styled.button`
-  height: 2.375rem;
-  border: none;
-  padding: 7.9;
-
-  background: ${(props) => props.theme["base-button"]};
-`;
-
 export const PaymentItens = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 72px;
+
+  border-radius: 6px;
   margin-left: 15px;
+
+  .Minus {
+    border-radius: 6px 0 0 6px;
+  }
+
+  .Plus {
+    border-radius: 0 6px 6px 0;
+  }
 
   span {
     max-width: 2rem;
@@ -87,7 +110,28 @@ export const PaymentItens = styled.div`
   }
 `;
 
+export const InputButtons = styled.button`
+  display: flex;
+  align-items: center;
+  border: none;
+
+  height: 2.375rem;
+  padding: 7.9px;
+
+  color: ${(props) => props.theme["purple"]};
+  background: ${(props) => props.theme["base-button"]};
+  transition: all 0.2s;
+
+  &:hover {
+    transition: all 0.2s;
+    color: ${(props) => props.theme["purple-dark"]};
+    scale: 1.1;
+    cursor: pointer;
+  }
+`;
+
 export const MarketButton = styled.div`
+  display: flex;
   border: none;
 
   border-radius: 6px;
@@ -95,4 +139,11 @@ export const MarketButton = styled.div`
 
   background: ${(props) => props.theme["purple-dark"]};
   color: ${(props) => props.theme["white"]};
+  transition: all 0.2s;
+
+  &:hover {
+    transition: all 0.2s;
+    background: ${(props) => props.theme["purple"]};
+    cursor: pointer;
+  }
 `;

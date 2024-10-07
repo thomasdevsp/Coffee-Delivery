@@ -96,7 +96,7 @@ export const BaseIcon = styled.div<StatusProps>`
   background-color: ${(props) => props.theme[STATUS_COLORS[props.statusColor]]};
 `;
 
-export const CoffeeContainerList = styled.div`
+export const CoffeeContainer = styled.div`
   width: 100%;
   padding: 2rem 10rem;
 
@@ -105,5 +105,6 @@ export const CoffeeContainerList = styled.div`
     font-weight: bolder;
     font-size: 2rem;
     color: ${(props) => props.theme["base-subtitle"]};
+    padding-bottom: 3.325rem;
   }
 `;

@@ -5,6 +5,7 @@ import {
   MarketButton,
   MarketContainer,
   PaymentItens,
+  PropsContainer,
 } from "./style";
 
 interface CardCoffeeProps {
@@ -20,9 +21,10 @@ export function CardCoffee(props: CardCoffeeProps) {
 
       <span className="Tag">Tradicional</span>
 
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
-
+      <PropsContainer>
+        <h3>{props.title}</h3>
+        <p>{props.description}</p>
+      </PropsContainer>
       <MarketContainer>
         <span>
           R$ <b>9,90</b>
@@ -30,11 +32,11 @@ export function CardCoffee(props: CardCoffeeProps) {
 
         <PaymentItens>
           <InputButtons className="Minus">
-            <Minus size={14} weight="thin" />
+            <Minus size={14} weight="bold" />
           </InputButtons>
           <span>0</span>
           <InputButtons className="Plus">
-            <Plus size={14} weight="thin" />
+            <Plus size={14} weight="bold" />
           </InputButtons>
         </PaymentItens>
 
