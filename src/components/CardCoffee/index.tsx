@@ -6,7 +6,7 @@ import {
   MarketContainer,
   PaymentItens,
   PropsContainer,
-} from "./style";
+} from "./styles";
 
 interface CardCoffeeProps {
   image: string;

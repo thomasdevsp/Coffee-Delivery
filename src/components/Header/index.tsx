@@ -6,13 +6,14 @@ import {
   Location,
   MarketCar,
 } from "./styles";
+import { NavLink } from "react-router-dom";
 
 export function Header() {
   return (
     <HeaderContainer>
-      <div>
+      <NavLink to="/">
         <img src={Logo} />
-      </div>
+      </NavLink>
 
       <ActionsContainer>
         <Location>
@@ -20,7 +21,9 @@ export function Header() {
           <span>São Paulo, SP</span>
         </Location>
         <MarketCar>
-          <ShoppingCart size={22} weight="fill" />
+          <NavLink to="/Checkout" title="Carrinho de Compras">
+            <ShoppingCart size={22} weight="fill" />
+          </NavLink>
         </MarketCar>
       </ActionsContainer>
     </HeaderContainer>

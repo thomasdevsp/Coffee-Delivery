@@ -38,9 +38,13 @@ export const Location = styled.div`
 `;
 
 export const MarketCar = styled.div`
+  display: flex;
   padding: 8px;
   border-radius: 6px;
 
-  color: ${(props) => props.theme["yellow"]};
   background: ${(props) => props.theme["yellow-light"]};
+
+  a {
+    color: ${(props) => props.theme["yellow"]};
+  }
 `;
