@@ -21,8 +21,6 @@ import {
   PaymentSelectContainer,
   SelectedCoffeeContainer,
   Separator,
-  SubPrice,
-  SubTitle,
   SubValues,
   TextContainer,
   TotalPrice,
@@ -30,20 +28,32 @@ import {
 } from "./styles";
 import { CompactCardCoffee } from "../../components/CompactCardCoffee";
 import { NavLink } from "react-router-dom";
+import { TitleXSBaloo } from "../../styles/texts/tittleThemes";
+import {
+  TextLRoboto,
+  TextMRoboto,
+  TextSRoboto,
+} from "../../styles/texts/textThemes";
 
 export function Checkout() {
   return (
     <ContentContainer>
       <CheckOutContainer>
-        <h2>Complete seu Pedido</h2>
+        <TitleXSBaloo statusColor="base-subtitle">
+          Complete seu Pedido
+        </TitleXSBaloo>
 
         <FormContainer>
           <TextContainer statusColor="yellow">
             <MapPinLine size={22} weight="regular" />
 
             <div>
-              <span>Endereço de Entrega</span>
-              <p>Informe o endereço onde deseja receber seu pedido</p>
+              <TextMRoboto statusColor="base-subtitle">
+                Endereço de Entrega
+              </TextMRoboto>
+              <TextSRoboto statusColor="base-text">
+                Informe o endereço onde deseja receber seu pedido
+              </TextSRoboto>
             </div>
           </TextContainer>
 
@@ -67,10 +77,10 @@ export function Checkout() {
             <CurrencyDollar size={22} weight="regular" />
 
             <div>
-              <span>Pagamento</span>
-              <p>
+              <TextMRoboto statusColor="base-subtitle">Pagamento</TextMRoboto>
+              <TextSRoboto statusColor="base-text">
                 O pagamento é feito na entrega. Escolha a forma que deseja pagar
-              </p>
+              </TextSRoboto>
             </div>
           </TextContainer>
 
@@ -97,7 +107,9 @@ export function Checkout() {
       </CheckOutContainer>
 
       <SelectedCoffeeContainer>
-        <h2>Cafés selecionados</h2>
+        <TitleXSBaloo statusColor="base-subtitle">
+          Cafés Selecionados
+        </TitleXSBaloo>
 
         <CoffeePaymentListContainer>
           <CompactCardCoffee
@@ -116,22 +128,22 @@ export function Checkout() {
 
           <ValueContainer>
             <SubValues>
-              <SubTitle>Total de Itens</SubTitle>
-              <SubPrice>R$ 29,70</SubPrice>
+              <TextSRoboto statusColor="base-text">Total de Itens</TextSRoboto>
+              <TextMRoboto statusColor="base-text">R$ 29,70</TextMRoboto>
             </SubValues>
             <SubValues>
-              <SubTitle>Entrega</SubTitle>
-              <SubPrice>R$ 3,90</SubPrice>
+              <TextSRoboto statusColor="base-text">Entrega</TextSRoboto>
+              <TextMRoboto statusColor="base-text">R$ 3,90</TextMRoboto>
             </SubValues>
             <TotalPrice>
-              <span>Total</span>
-              <span>R$ 33,20</span>
+              <TextLRoboto statusColor="base-subtitle">Total</TextLRoboto>
+              <TextLRoboto statusColor="base-subtitle">R$ 33,20</TextLRoboto>
             </TotalPrice>
           </ValueContainer>
 
-          <ConfirmButton>
-            <NavLink to="/Success">Confirmar Pedido</NavLink>
-          </ConfirmButton>
+          <NavLink to="/Success">
+            <ConfirmButton>Confirmar Pedido</ConfirmButton>
+          </NavLink>
         </CoffeePaymentListContainer>
       </SelectedCoffeeContainer>
     </ContentContainer>

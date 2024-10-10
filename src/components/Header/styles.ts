@@ -30,9 +30,6 @@ export const Location = styled.div`
   gap: 4px;
   padding: 8px;
 
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
-
   color: ${(props) => props.theme["purple-dark"]};
   background: ${(props) => props.theme["purple-light"]};
 `;

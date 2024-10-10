@@ -9,6 +9,7 @@ import {
   PropsContainer,
   TrashButton,
 } from "./styles";
+import { ButtonM, TextMRoboto } from "../../styles/texts/textThemes";
 
 interface CardCoffeeProps {
   image: string;
@@ -24,7 +25,7 @@ export function CompactCardCoffee(props: CardCoffeeProps) {
 
       <InfoCardContainer>
         <PropsContainer>
-          <h3>{props.title}</h3>
+          <TextMRoboto statusColor="base-subtitle">{props.title}</TextMRoboto>
         </PropsContainer>
 
         <ControllerButtons>
@@ -40,7 +41,7 @@ export function CompactCardCoffee(props: CardCoffeeProps) {
 
           <TrashButton>
             <Trash size={16} weight="regular" />
-            <span>REMOVER</span>
+            <ButtonM statusColor="base-text">REMOVER</ButtonM>
           </TrashButton>
         </ControllerButtons>
       </InfoCardContainer>

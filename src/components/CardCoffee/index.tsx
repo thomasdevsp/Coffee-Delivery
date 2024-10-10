@@ -7,6 +7,8 @@ import {
   PaymentItens,
   PropsContainer,
 } from "./styles";
+import { TitleMBaloo, TitleSBaloo } from "../../styles/texts/tittleThemes";
+import { Tag, TextSRoboto } from "../../styles/texts/textThemes";
 
 interface CardCoffeeProps {
   image: string;
@@ -19,16 +21,16 @@ export function CardCoffee(props: CardCoffeeProps) {
     <CardContainer>
       <img src={props.image} />
 
-      <span className="Tag">Tradicional</span>
+      <Tag statusColor="yellow-dark">Tradicional</Tag>
 
       <PropsContainer>
-        <h3>{props.title}</h3>
-        <p>{props.description}</p>
+        <TitleSBaloo statusColor="base-subtitle">{props.title}</TitleSBaloo>
+        <TextSRoboto statusColor="base-label">{props.description}</TextSRoboto>
       </PropsContainer>
       <MarketContainer>
-        <span>
-          R$ <b>9,90</b>
-        </span>
+        <TextSRoboto className="Flex" statusColor="base-text">
+          R$ <TitleMBaloo statusColor="base-text">9,90</TitleMBaloo>
+        </TextSRoboto>
 
         <PaymentItens>
           <InputButtons className="Minus">

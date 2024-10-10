@@ -14,40 +14,12 @@ export const CardContainer = styled.div`
 
   background: ${(props) => props.theme["base-card"]};
 
-  .Tag {
-    font-family: "Roboto", sans-serif;
-    font-size: 0.875rem;
-    color: ${(props) => props.theme["base-label"]};
-    background: ${(props) => props.theme["yellow-light"]};
-    color: ${(props) => props.theme["yellow-dark"]};
-
-    padding: 4px;
-    margin-bottom: 10px;
-    border-radius: 100px;
-  }
-
   img {
     max-width: 120px;
     height: 120px;
 
     position: relative;
     bottom: 20px;
-  }
-
-  h3 {
-    font-family: "Baloo 2", sans-serif;
-    font-weight: bold;
-    font-size: 1.25rem;
-    color: ${(props) => props.theme["base-subtitle"]};
-  }
-
-  p {
-    font-family: "Roboto", sans-serif;
-
-    text-align: center;
-    font-size: 0.875rem;
-
-    color: ${(props) => props.theme["base-label"]};
   }
 `;
 
@@ -66,17 +38,10 @@ export const MarketContainer = styled.div`
   margin-top: 24px;
   gap: 8px;
 
-  span {
-    font-family: "Roboto", sans-serif;
-    font-size: 0.875rem;
-    color: ${(props) => props.theme["base-label"]};
-  }
-
-  b {
-    font-family: "Baloo 2", sans-serif;
-    font-weight: bold;
-    font-size: 1.25rem;
-    color: ${(props) => props.theme["base-subtitle"]};
+  .Flex {
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
 `;
 

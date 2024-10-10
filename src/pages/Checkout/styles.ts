@@ -7,38 +7,12 @@ export const ContentContainer = styled.main`
 
   width: 100%;
   padding: 2.5rem 10rem 0 10rem;
-
-  h2 {
-    font-family: "Baloo 2", sans-serif;
-    font-weight: bold;
-    text-align: left;
-
-    font-size: 1.125rem;
-  }
 `;
 
 export const CheckOutContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-
-  span,
-  p {
-    font-family: "Roboto", sans-serif;
-    text-align: left;
-  }
-
-  span {
-    font-size: 1rem;
-
-    color: ${(props) => props.theme["base-subtitle"]};
-  }
-
-  p {
-    font-size: 0.875rem;
-
-    color: ${(props) => props.theme["base-text"]};
-  }
 `;
 
 export const FormContainer = styled.form`
@@ -106,8 +80,6 @@ export const InputContainer = styled.div`
 `;
 
 export const InputForm = styled.input`
-  font-family: "Roboto", sans-serif;
-  font-weight: Regular;
   border: 1px solid ${(props) => props.theme["base-button"]};
 
   border-radius: 4px;
@@ -153,14 +125,11 @@ export const PaymentMethodContainer = styled.div`
     padding: 1rem;
     border-radius: 6px;
     border: 1px solid transparent;
-
     background-color: ${(props) => props.theme["base-button"]};
 
     span {
       font-family: "Roboto", sans-serif;
-
-      font-size: 12px;
-
+      line-height: 130%;
       color: ${(props) => props.theme["base-text"]};
     }
 
@@ -199,6 +168,10 @@ export const CoffeePaymentListContainer = styled.div`
   border-radius: 6px 36px 6px 36px;
 
   background: ${(props) => props.theme["base-card"]};
+
+  a {
+    width: 100%;
+  }
 `;
 
 export const Separator = styled.div`
@@ -222,50 +195,24 @@ export const SubValues = styled.div`
   justify-content: space-between;
 `;
 
-const BaseText = styled.span`
-  font-family: "Roboto", sans-serif;
-  color: ${(props) => props.theme["base-text"]};
-  font-weight: regular;
-`;
-
-export const SubTitle = styled(BaseText)`
-  font-size: 14px;
-`;
-
-export const SubPrice = styled(BaseText)`
-  font-weight: 500;
-  font-size: 1rem;
-`;
-
 export const TotalPrice = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  span {
-    font-family: "Roboto", sans-serif;
-    color: ${(props) => props.theme["base-subtittle"]};
-    font-size: 1.25rem;
-    font-weight: bold;
-  }
 `;
 
 export const ConfirmButton = styled.button`
-  font-family: "Roboto", sans-serif;
   text-transform: uppercase;
-  font-weight: bold;
   border: none;
+
+  width: 100%;
   border-radius: 6px;
 
+  color: ${(props) => props.theme["white"]};
   background-color: ${(props) => props.theme["yellow"]};
 
   padding-block: 12px;
   font-size: 14px;
-
-  a {
-    text-decoration: none;
-    color: ${(props) => props.theme["white"]};
-  }
 
   &:hover {
     cursor: pointer;

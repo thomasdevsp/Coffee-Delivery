@@ -25,25 +25,6 @@ export const TextContainer = styled.div`
 
   gap: 1rem;
   max-width: 38rem;
-
-  h1 {
-    font-family: "Baloo 2", sans-serif;
-    font-weight: bolder;
-    font-size: 3.025rem;
-    color: ${(props) => props.theme["base-title"]};
-  }
-
-  h3 {
-    font-family: "Roboto", sans-serif;
-    font-size: 1.275rem;
-    color: ${(props) => props.theme["base-subtitle"]};
-  }
-
-  span {
-    font-family: "Roboto", sans-serif;
-    font-size: 1rem;
-    color: ${(props) => props.theme["base-text"]};
-  }
 `;
 
 export const ColectionItemContainer = styled.div`
@@ -97,14 +78,9 @@ export const BaseIcon = styled.div<StatusProps>`
 `;
 
 export const CoffeeContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3.325rem;
   width: 100%;
   padding: 2rem 10rem;
-
-  h2 {
-    font-family: "Baloo 2", sans-serif;
-    font-weight: bolder;
-    font-size: 2rem;
-    color: ${(props) => props.theme["base-subtitle"]};
-    padding-bottom: 3.325rem;
-  }
 `;

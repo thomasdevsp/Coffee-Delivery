@@ -7,6 +7,7 @@ import {
   MarketCar,
 } from "./styles";
 import { NavLink } from "react-router-dom";
+import { TextSRoboto } from "../../styles/texts/textThemes";
 
 export function Header() {
   return (
@@ -18,7 +19,7 @@ export function Header() {
       <ActionsContainer>
         <Location>
           <MapPin size={22} weight="fill" />
-          <span>São Paulo, SP</span>
+          <TextSRoboto statusColor="purple">São Paulo, SP</TextSRoboto>
         </Location>
         <MarketCar>
           <NavLink to="/Checkout" title="Carrinho de Compras">
