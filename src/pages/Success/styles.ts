@@ -13,7 +13,10 @@ export const ContentContainer = styled.main`
   }
 `;
 
-export const TittleContainer = styled.div``;
+export const TittleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 export const OrderInfoContainer = styled.div`
   display: flex;
   flex-direction: column;

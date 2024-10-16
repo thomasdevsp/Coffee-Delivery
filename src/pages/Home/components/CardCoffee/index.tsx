@@ -7,8 +7,11 @@ import {
   PaymentItens,
   PropsContainer,
 } from "./styles";
-import { TitleMBaloo, TitleSBaloo } from "../../styles/texts/tittleThemes";
-import { Tag, TextSRoboto } from "../../styles/texts/textThemes";
+import {
+  TitleMBaloo,
+  TitleSBaloo,
+} from "../../../../styles/texts/tittleThemes";
+import { Tag, TextSRoboto } from "../../../../styles/texts/textThemes";
 
 interface CardCoffeeProps {
   image: string;
