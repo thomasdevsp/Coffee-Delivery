@@ -1,13 +1,10 @@
-import ExpressoTradicional from "../../assets/coffee/Type=Expresso.png";
-import ExpressoAmericano from "../../assets/coffee/Type=Americano.png";
-
 import {
   Bank,
   CreditCard,
   CurrencyDollar,
   MapPinLine,
   Money,
-} from "@phosphor-icons/react";
+} from "@phosphor-icons/react"
 
 import {
   CheckOutContainer,
@@ -20,22 +17,32 @@ import {
   PaymentMethodContainer,
   PaymentSelectContainer,
   SelectedCoffeeContainer,
-  Separator,
   SubValues,
   TextContainer,
   TotalPrice,
   ValueContainer,
-} from "./styles";
-import { CompactCardCoffee } from "../../components/CompactCardCoffee";
-import { NavLink } from "react-router-dom";
-import { TitleXSBaloo } from "../../styles/texts/tittleThemes";
+} from "./styles"
+import { CompactCardCoffee } from "./components/CompactCardCoffee"
+import { NavLink } from "react-router-dom"
+import { TitleXSBaloo } from "../../styles/texts/tittleThemes"
 import {
   TextLRoboto,
   TextMRoboto,
   TextSRoboto,
-} from "../../styles/texts/textThemes";
+} from "../../styles/texts/textThemes"
+import { useCartContext } from "../../contexts/cartContext/useCartContext"
 
 export function Checkout() {
+  const { coffeeList } = useCartContext()
+
+  const totalPriceItens = coffeeList.reduce((total, coffee) => {
+    return total + coffee.price
+  }, 0)
+
+  const Frete = totalPriceItens / 7
+
+  const totalPrice = totalPriceItens + Frete
+
   return (
     <ContentContainer>
       <CheckOutContainer>
@@ -112,32 +119,31 @@ export function Checkout() {
         </TitleXSBaloo>
 
         <CoffeePaymentListContainer>
-          <CompactCardCoffee
-            title="Expresso Tradicional"
-            image={ExpressoTradicional}
-          />
-
-          <Separator />
-
-          <CompactCardCoffee
-            title="Expresso Americano"
-            image={ExpressoAmericano}
-          />
-
-          <Separator />
+          {coffeeList.map((coffee) => (
+            <CompactCardCoffee
+              key={coffee.id}
+              data={coffee}
+            />
+          ))}
 
           <ValueContainer>
             <SubValues>
               <TextSRoboto statusColor="base-text">Total de Itens</TextSRoboto>
-              <TextMRoboto statusColor="base-text">R$ 29,70</TextMRoboto>
+              <TextMRoboto statusColor="base-text">
+                R$ {totalPriceItens.toFixed(2).replace(".", ",")}
+              </TextMRoboto>
             </SubValues>
             <SubValues>
               <TextSRoboto statusColor="base-text">Entrega</TextSRoboto>
-              <TextMRoboto statusColor="base-text">R$ 3,90</TextMRoboto>
+              <TextMRoboto statusColor="base-text">
+                R$ {Frete.toFixed(2).replace(".", ",")}
+              </TextMRoboto>
             </SubValues>
             <TotalPrice>
               <TextLRoboto statusColor="base-subtitle">Total</TextLRoboto>
-              <TextLRoboto statusColor="base-subtitle">R$ 33,20</TextLRoboto>
+              <TextLRoboto statusColor="base-subtitle">
+                R$ {totalPrice.toFixed(2).replace(".", ",")}
+              </TextLRoboto>
             </TotalPrice>
           </ValueContainer>
 
@@ -147,5 +153,5 @@ export function Checkout() {
         </CoffeePaymentListContainer>
       </SelectedCoffeeContainer>
     </ContentContainer>
-  );
+  )
 }

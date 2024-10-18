@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CardContainer = styled.div`
+export const CompactCardContainer = styled.div`
   display: grid;
   grid-template-columns: auto auto auto;
 
@@ -20,6 +20,8 @@ export const CardContainer = styled.div`
     color: ${(props) => props.theme["base-subtitle"]};
   }
 `;
+
+export const CardContainer = styled.div``;
 
 export const Price = styled.span`
   font-size: 0.875rem;
@@ -128,4 +130,12 @@ export const TrashButton = styled.div`
     line-height: 0;
     color: ${(props) => props.theme["base-text"]};
   }
+`;
+
+export const CoffeeSeparator = styled.div`
+  margin-top: 1.5rem;
+  width: 100%;
+  height: 1px;
+
+  background: ${(props) => props.theme["base-button"]};
 `;

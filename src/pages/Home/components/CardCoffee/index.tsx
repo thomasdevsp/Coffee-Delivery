@@ -1,4 +1,4 @@
-import { Minus, Plus, ShoppingCart } from "@phosphor-icons/react";
+import { Minus, Plus, ShoppingCart } from "@phosphor-icons/react"
 import {
   CardContainer,
   InputButtons,
@@ -6,49 +6,64 @@ import {
   MarketContainer,
   PaymentItens,
   PropsContainer,
-} from "./styles";
+} from "./styles"
 import {
   TitleMBaloo,
   TitleSBaloo,
-} from "../../../../styles/texts/tittleThemes";
-import { Tag, TextSRoboto } from "../../../../styles/texts/textThemes";
+} from "../../../../styles/texts/tittleThemes"
+import { Tag, TextSRoboto } from "../../../../styles/texts/textThemes"
+import { CoffeeProps } from "../../../../contexts/cartContext/interfaces"
+import { useCartContext } from "../../../../contexts/cartContext/useCartContext"
 
 interface CardCoffeeProps {
-  image: string;
-  title: string;
-  description: string;
+  data: CoffeeProps;
 }
 
-export function CardCoffee(props: CardCoffeeProps) {
+export function CardCoffee({
+  data,
+}: CardCoffeeProps) {
+
+  const { incrementCoffee, drecrementCoffee } = useCartContext()
+
+  function handleIncrementCoffee() {
+    incrementCoffee(data.id)
+  }
+
+  function handleDrecrementCoffee() {
+    drecrementCoffee(data.id)
+  }
+
+  const formatedPrice = data.price.toFixed(2).toString().replace(".", ",")
+
   return (
     <CardContainer>
-      <img src={props.image} />
+      <img src={data.image} />
 
       <Tag statusColor="yellow-dark">Tradicional</Tag>
 
       <PropsContainer>
-        <TitleSBaloo statusColor="base-subtitle">{props.title}</TitleSBaloo>
-        <TextSRoboto statusColor="base-label">{props.description}</TextSRoboto>
+        <TitleSBaloo statusColor="base-subtitle">{data.title}</TitleSBaloo>
+        <TextSRoboto statusColor="base-label">{data.description}</TextSRoboto>
       </PropsContainer>
       <MarketContainer>
         <TextSRoboto className="Flex" statusColor="base-text">
-          R$ <TitleMBaloo statusColor="base-text">9,90</TitleMBaloo>
+          R$ <TitleMBaloo statusColor="base-text">{formatedPrice}</TitleMBaloo>
         </TextSRoboto>
 
         <PaymentItens>
-          <InputButtons className="Minus">
+          <InputButtons onClick={handleDrecrementCoffee} className="Minus">
             <Minus size={14} weight="bold" />
           </InputButtons>
-          <span>0</span>
-          <InputButtons className="Plus">
+          <span>{data.quantity}</span>
+          <InputButtons onClick={handleIncrementCoffee}  className="Plus">
             <Plus size={14} weight="bold" />
           </InputButtons>
         </PaymentItens>
 
-        <MarketButton>
+        <MarketButton >
           <ShoppingCart size={22} weight="fill" />
         </MarketButton>
       </MarketContainer>
     </CardContainer>
-  );
+  )
 }

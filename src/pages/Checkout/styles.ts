@@ -174,6 +174,14 @@ export const CoffeePaymentListContainer = styled.div`
   }
 `;
 
+export const SeparatorCoffee = styled.div`
+  margin-block: 1.5rem;
+  width: 100%;
+  height: 1px;
+
+  background: ${(props) => props.theme["base-button"]};
+`;
+
 export const Separator = styled.div`
   width: 100%;
   height: 1px;
