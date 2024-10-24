@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const CompactCardContainer = styled.div`
   display: grid;
@@ -19,9 +19,9 @@ export const CompactCardContainer = styled.div`
     font-size: 1rem;
     color: ${(props) => props.theme["base-subtitle"]};
   }
-`;
+`
 
-export const CardContainer = styled.div``;
+export const CardContainer = styled.div``
 
 export const Price = styled.span`
   font-size: 0.875rem;
@@ -31,7 +31,7 @@ export const Price = styled.span`
   font-weight: bold;
 
   color: ${(props) => props.theme["base-text"]};
-`;
+`
 
 export const InfoCardContainer = styled.div`
   display: flex;
@@ -40,7 +40,7 @@ export const InfoCardContainer = styled.div`
   justify-content: center;
 
   gap: 8px;
-`;
+`
 
 export const PropsContainer = styled.div`
   display: flex;
@@ -48,13 +48,13 @@ export const PropsContainer = styled.div`
   justify-content: space-between;
 
   gap: 8px;
-`;
+`
 
 export const ControllerButtons = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-`;
+`
 
 export const CounterButtons = styled.div`
   display: flex;
@@ -83,7 +83,7 @@ export const CounterButtons = styled.div`
 
     background: ${(props) => props.theme["base-button"]};
   }
-`;
+`
 
 export const InputButtons = styled.button`
   display: flex;
@@ -103,7 +103,7 @@ export const InputButtons = styled.button`
     scale: 1.1;
     cursor: pointer;
   }
-`;
+`
 
 export const TrashButton = styled.div`
   display: flex;
@@ -130,7 +130,7 @@ export const TrashButton = styled.div`
     line-height: 0;
     color: ${(props) => props.theme["base-text"]};
   }
-`;
+`
 
 export const CoffeeSeparator = styled.div`
   margin-top: 1.5rem;
@@ -138,4 +138,4 @@ export const CoffeeSeparator = styled.div`
   height: 1px;
 
   background: ${(props) => props.theme["base-button"]};
-`;
+`

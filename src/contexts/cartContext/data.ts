@@ -1,4 +1,4 @@
-import { CoffeeProps } from "./interfaces";
+import { CoffeeProps } from "./interfaces"
 
 export const coffeeListDefault: CoffeeProps[] = [
   {
@@ -130,4 +130,4 @@ export const coffeeListDefault: CoffeeProps[] = [
     image: "/coffee/Type=Irlandês.png",
     quantity: 0,
   },
-];
+]

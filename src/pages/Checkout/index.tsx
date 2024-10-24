@@ -1,11 +1,5 @@
-import {
-  Bank,
-  CreditCard,
-  CurrencyDollar,
-  MapPinLine,
-  Money,
-} from "@phosphor-icons/react"
-
+import { NavLink } from "react-router-dom"
+import { useCartContext } from "../../contexts/cartContext/useCartContext"
 import {
   CheckOutContainer,
   CoffeePaymentListContainer,
@@ -23,28 +17,34 @@ import {
   ValueContainer,
 } from "./styles"
 import { CompactCardCoffee } from "./components/CompactCardCoffee"
-import { NavLink } from "react-router-dom"
 import { TitleXSBaloo } from "../../styles/texts/tittleThemes"
 import {
   TextLRoboto,
   TextMRoboto,
   TextSRoboto,
 } from "../../styles/texts/textThemes"
-import { useCartContext } from "../../contexts/cartContext/useCartContext"
+
+import {
+  Bank,
+  CreditCard,
+  CurrencyDollar,
+  MapPinLine,
+  Money,
+} from "@phosphor-icons/react"
 
 export function Checkout() {
-  const { coffeeList } = useCartContext()
+  const { filteredCoffeeList } = useCartContext()
 
-  const totalPriceItens = coffeeList.reduce((total, coffee) => {
-    return total + coffee.price
+  const totalItens = filteredCoffeeList.reduce((acc, coffee) => {
+    return acc + coffee.price * coffee.quantity
   }, 0)
 
-  const Frete = totalPriceItens / 7
+  const frete = totalItens / 7
 
-  const totalPrice = totalPriceItens + Frete
+  const totalCart = totalItens + frete
 
   return (
-    <ContentContainer>
+    <ContentContainer  >
       <CheckOutContainer>
         <TitleXSBaloo statusColor="base-subtitle">
           Complete seu Pedido
@@ -65,9 +65,17 @@ export function Checkout() {
           </TextContainer>
 
           <InputContainer>
-            <InputForm type="text" placeholder="CEP" className="CEP" />
-            <InputForm type="text" placeholder="Rua" className="Rua" />
-            <InputForm type="text" placeholder="Número" className="Numero" />
+            <InputForm type="text"
+            placeholder="CEP"
+            className="CEP"/>
+
+            <InputForm type="text"
+            placeholder="Rua"
+            className="Rua" />
+
+            <InputForm type="text"
+            placeholder="Número"
+            className="Numero" />
             <InputForm
               type="text"
               placeholder="Complemento"
@@ -119,7 +127,7 @@ export function Checkout() {
         </TitleXSBaloo>
 
         <CoffeePaymentListContainer>
-          {coffeeList.map((coffee) => (
+          {filteredCoffeeList.map((coffee) => (
             <CompactCardCoffee
               key={coffee.id}
               data={coffee}
@@ -130,25 +138,25 @@ export function Checkout() {
             <SubValues>
               <TextSRoboto statusColor="base-text">Total de Itens</TextSRoboto>
               <TextMRoboto statusColor="base-text">
-                R$ {totalPriceItens.toFixed(2).replace(".", ",")}
+                R$ {totalItens.toFixed(2).replace(".", ",")}
               </TextMRoboto>
             </SubValues>
             <SubValues>
               <TextSRoboto statusColor="base-text">Entrega</TextSRoboto>
               <TextMRoboto statusColor="base-text">
-                R$ {Frete.toFixed(2).replace(".", ",")}
+                R$ {frete.toFixed(2).replace(".", ",")}
               </TextMRoboto>
             </SubValues>
             <TotalPrice>
               <TextLRoboto statusColor="base-subtitle">Total</TextLRoboto>
               <TextLRoboto statusColor="base-subtitle">
-                R$ {totalPrice.toFixed(2).replace(".", ",")}
+                R$ {totalCart.toFixed(2).replace(".", ",")}
               </TextLRoboto>
             </TotalPrice>
           </ValueContainer>
 
           <NavLink to="/Success">
-            <ConfirmButton>Confirmar Pedido</ConfirmButton>
+            <ConfirmButton type="submit"  disabled={totalCart === 0 ? true : false}>Confirmar Pedido</ConfirmButton>
           </NavLink>
         </CoffeePaymentListContainer>
       </SelectedCoffeeContainer>

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const CardContainer = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ export const CardContainer = styled.div`
     position: relative;
     bottom: 20px;
   }
-`;
+`
 
 export const PropsContainer = styled.div`
   display: flex;
@@ -29,7 +29,7 @@ export const PropsContainer = styled.div`
   flex-direction: column;
 
   gap: 8px;
-`;
+`
 
 export const MarketContainer = styled.div`
   display: flex;
@@ -43,7 +43,7 @@ export const MarketContainer = styled.div`
     align-items: center;
     gap: 4px;
   }
-`;
+`
 
 export const PaymentItens = styled.div`
   display: flex;
@@ -73,7 +73,7 @@ export const PaymentItens = styled.div`
 
     background: ${(props) => props.theme["base-button"]};
   }
-`;
+`
 
 export const InputButtons = styled.button`
   display: flex;
@@ -93,7 +93,7 @@ export const InputButtons = styled.button`
     scale: 1.1;
     cursor: pointer;
   }
-`;
+`
 
 export const MarketButton = styled.div`
   display: flex;
@@ -111,4 +111,4 @@ export const MarketButton = styled.div`
     background: ${(props) => props.theme["purple"]};
     cursor: pointer;
   }
-`;
+`

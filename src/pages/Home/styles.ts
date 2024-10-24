@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import background from "../../assets/introduction/Background.png";
+import styled from "styled-components"
+import background from "../../assets/introduction/Background.png"
 
 export const HomeContainer = styled.main`
   display: flex;
   flex-direction: column;
-`;
+`
 
 export const IntroductionContainer = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ export const IntroductionContainer = styled.div`
   width: 100%;
 
   background-image: url(${background});
-`;
+`
 
 export const TextContainer = styled.div`
   display: flex;
@@ -25,7 +25,7 @@ export const TextContainer = styled.div`
 
   gap: 1rem;
   max-width: 38rem;
-`;
+`
 
 export const ColectionItemContainer = styled.div`
   display: grid;
@@ -35,7 +35,7 @@ export const ColectionItemContainer = styled.div`
   gap: 20px;
 
   margin-top: 4.125rem;
-`;
+`
 
 export const ItemContainer = styled.div`
   display: flex;
@@ -43,21 +43,21 @@ export const ItemContainer = styled.div`
   max-width: 19rem;
 
   gap: 12px;
-`;
+`
 
 export const ImageContainer = styled.div`
   img {
     max-width: 623px;
     height: 471px;
   }
-`;
+`
 
 const STATUS_COLORS = {
   yellowDark: "yellow-dark",
   yellow: "yellow",
   gray: "base-text",
   purple: "purple",
-} as const;
+} as const
 
 interface StatusProps {
   statusColor: keyof typeof STATUS_COLORS;
@@ -75,7 +75,7 @@ export const BaseIcon = styled.div<StatusProps>`
 
   color: ${(props) => props.theme["background"]};
   background-color: ${(props) => props.theme[STATUS_COLORS[props.statusColor]]};
-`;
+`
 
 export const CoffeeContainer = styled.div`
   display: flex;
@@ -83,4 +83,4 @@ export const CoffeeContainer = styled.div`
   gap: 3.325rem;
   width: 100%;
   padding: 2rem 10rem;
-`;
+`

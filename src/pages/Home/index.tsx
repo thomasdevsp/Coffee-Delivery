@@ -1,8 +1,8 @@
-import { Coffee, Package, ShoppingCart, Timer } from "@phosphor-icons/react";
-import { CoffeeListContainer } from "./components/CoffeeListContainer";
-import CoffeeCoup from "../../assets/introduction/Imagem.svg";
-import { TitleLBaloo, TitleXLBaloo } from "../../styles/texts/tittleThemes";
-import { TextLRoboto, TextMRoboto } from "../../styles/texts/textThemes";
+import { Coffee, Package, ShoppingCart, Timer } from "@phosphor-icons/react"
+import { CoffeeListContainer } from "./components/CoffeeListContainer"
+import CoffeeCoup from "../../assets/introduction/Imagem.svg"
+import { TitleLBaloo, TitleXLBaloo } from "../../styles/texts/tittleThemes"
+import { TextLRoboto, TextMRoboto } from "../../styles/texts/textThemes"
 import {
   BaseIcon,
   CoffeeContainer,
@@ -12,7 +12,7 @@ import {
   IntroductionContainer,
   ItemContainer,
   TextContainer,
-} from "./styles";
+} from "./styles"
 
 export function Home() {
   return (
@@ -76,5 +76,5 @@ export function Home() {
         <CoffeeListContainer />
       </CoffeeContainer>
     </HomeContainer>
-  );
+  )
 }

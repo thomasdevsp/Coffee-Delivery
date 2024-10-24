@@ -20,15 +20,21 @@ interface CompactCardCoffeeProps {
 }
 
 export function CompactCardCoffee({ data }: CompactCardCoffeeProps) {
-  const { drecrementCoffee, incrementCoffee } = useCartContext()
-  const formatedPrice = data.price.toFixed(2).toString().replace(".", ",")
+  const { incrementCoffeeFiltered, drecrementCoffeeFiltered, removeCoffee } = useCartContext()
+{
+  const correctedPrice =  data.price * data.quantity
+  const formatedPrice = correctedPrice.toFixed(2).toString().replace(".", ",")
 
   function handleDrecrementCoffee() {
-    drecrementCoffee(data.id)
+    drecrementCoffeeFiltered(data.id)
   }
 
   function handleIncrementCoffee() {
-    incrementCoffee(data.id)
+    incrementCoffeeFiltered(data.id)
+  }
+
+  function handleremoveCoffee() {
+    removeCoffee(data.id)
   }
 
   return (
@@ -53,7 +59,7 @@ export function CompactCardCoffee({ data }: CompactCardCoffeeProps) {
               </InputButtons>
             </CounterButtons>
 
-            <TrashButton>
+            <TrashButton onClick={handleremoveCoffee}>
               <Trash size={16} weight="regular" />
               <ButtonM statusColor="base-text">REMOVER</ButtonM>
             </TrashButton>
@@ -64,4 +70,5 @@ export function CompactCardCoffee({ data }: CompactCardCoffeeProps) {
       <CoffeeSeparator />
     </CardContainer>
   )
+}
 }

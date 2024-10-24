@@ -1,19 +1,19 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
-export const ContentContainer = styled.main`
+export const ContentContainer = styled.form`
   display: grid;
   grid-template: auto / auto 29rem;
   justify-content: space-around;
 
   width: 100%;
   padding: 2.5rem 10rem 0 10rem;
-`;
+`
 
 export const CheckOutContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-`;
+`
 
 export const FormContainer = styled.form`
   display: flex;
@@ -23,12 +23,12 @@ export const FormContainer = styled.form`
 
   background: ${(props) => props.theme["base-card"]};
   border-radius: 6px;
-`;
+`
 
 const STATUS_COLORS = {
   yellow: "yellow",
   purple: "purple",
-} as const;
+} as const
 
 interface StatusProps {
   statusColor: keyof typeof STATUS_COLORS;
@@ -48,7 +48,7 @@ export const TextContainer = styled.div<StatusProps>`
     flex-direction: column;
     gap: 2px;
   }
-`;
+`
 
 export const InputContainer = styled.div`
   display: grid;
@@ -77,7 +77,7 @@ export const InputContainer = styled.div`
     grid-area: 4 / 2 / span 1 / auto;
     width: 100%;
   }
-`;
+`
 
 export const InputForm = styled.input`
   border: 1px solid ${(props) => props.theme["base-button"]};
@@ -97,14 +97,14 @@ export const InputForm = styled.input`
   &::placeholder {
     color: ${(props) => props.theme["base-label"]};
   }
-`;
+`
 
 export const PaymentSelectContainer = styled.div`
   padding: 2.5rem;
 
   background: ${(props) => props.theme["base-card"]};
   border-radius: 6px;
-`;
+`
 
 export const PaymentMethodContainer = styled.div`
   display: flex;
@@ -151,13 +151,13 @@ export const PaymentMethodContainer = styled.div`
     background: ${(props) => props.theme["purple-light"]};
     border: 1px solid ${(props) => props.theme["purple"]};
   }
-`;
+`
 
 export const SelectedCoffeeContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-`;
+`
 
 export const CoffeePaymentListContainer = styled.div`
   display: flex;
@@ -172,7 +172,7 @@ export const CoffeePaymentListContainer = styled.div`
   a {
     width: 100%;
   }
-`;
+`
 
 export const SeparatorCoffee = styled.div`
   margin-block: 1.5rem;
@@ -180,14 +180,14 @@ export const SeparatorCoffee = styled.div`
   height: 1px;
 
   background: ${(props) => props.theme["base-button"]};
-`;
+`
 
 export const Separator = styled.div`
   width: 100%;
   height: 1px;
 
   background: ${(props) => props.theme["base-button"]};
-`;
+`
 
 export const ValueContainer = styled.div`
   display: flex;
@@ -195,19 +195,19 @@ export const ValueContainer = styled.div`
 
   gap: 12px;
   width: 100%;
-`;
+`
 
 export const SubValues = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-`;
+`
 
 export const TotalPrice = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-`;
+`
 
 export const ConfirmButton = styled.button`
   text-transform: uppercase;
@@ -222,11 +222,16 @@ export const ConfirmButton = styled.button`
   padding-block: 12px;
   font-size: 14px;
 
-  &:hover {
+  &:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
     cursor: pointer;
 
     transition: all 0.2s;
 
     background: ${(props) => props.theme["yellow-dark"]};
   }
-`;
+`

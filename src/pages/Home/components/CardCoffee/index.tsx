@@ -23,7 +23,7 @@ export function CardCoffee({
   data,
 }: CardCoffeeProps) {
 
-  const { incrementCoffee, drecrementCoffee } = useCartContext()
+  const { incrementCoffee, drecrementCoffee, addToCart } = useCartContext()
 
   function handleIncrementCoffee() {
     incrementCoffee(data.id)
@@ -31,6 +31,10 @@ export function CardCoffee({
 
   function handleDrecrementCoffee() {
     drecrementCoffee(data.id)
+  }
+
+  function hadleOnCart() {
+    addToCart(data.id)
   }
 
   const formatedPrice = data.price.toFixed(2).toString().replace(".", ",")
@@ -60,7 +64,7 @@ export function CardCoffee({
           </InputButtons>
         </PaymentItens>
 
-        <MarketButton >
+        <MarketButton onClick={hadleOnCart}>
           <ShoppingCart size={22} weight="fill" />
         </MarketButton>
       </MarketContainer>

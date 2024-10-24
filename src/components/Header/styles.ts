@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -12,14 +12,14 @@ export const HeaderContainer = styled.header`
     width: 5.313rem;
     height: 2.5rem;
   }
-`;
+`
 
 export const ActionsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-`;
+`
 
 export const Location = styled.div`
   display: flex;
@@ -32,7 +32,7 @@ export const Location = styled.div`
 
   color: ${(props) => props.theme["purple-dark"]};
   background: ${(props) => props.theme["purple-light"]};
-`;
+`
 
 export const MarketCar = styled.div`
   display: flex;
@@ -44,4 +44,4 @@ export const MarketCar = styled.div`
   a {
     color: ${(props) => props.theme["yellow"]};
   }
-`;
+`

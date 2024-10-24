@@ -1,16 +1,16 @@
-import { CurrencyDollar, MapPin, Timer } from "@phosphor-icons/react";
-import { BaseIcon } from "../Home/styles";
+import { CurrencyDollar, MapPin, Timer } from "@phosphor-icons/react"
+import { BaseIcon } from "../Home/styles"
 import {
   ContentContainer,
   ItemContainer,
   OrderInfoContainer,
   TextContainer,
   TittleContainer,
-} from "./styles";
+} from "./styles"
 
-import Motoboy from "../../assets/success/Illustration.png";
-import { TitleLBaloo } from "../../styles/texts/tittleThemes";
-import { TextLRoboto, TextMRoboto } from "../../styles/texts/textThemes";
+import Motoboy from "../../assets/success/Illustration.png"
+import { TitleLBaloo } from "../../styles/texts/tittleThemes"
+import { TextLRoboto, TextMRoboto } from "../../styles/texts/textThemes"
 
 export function Success() {
   return (
@@ -70,5 +70,5 @@ export function Success() {
 
       <img src={Motoboy} />
     </ContentContainer>
-  );
+  )
 }

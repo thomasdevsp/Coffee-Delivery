@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const ContentContainer = styled.main`
   display: grid;
@@ -11,12 +11,12 @@ export const ContentContainer = styled.main`
   img {
     grid-area: 2 / 2 / span 1 / span 1;
   }
-`;
+`
 
 export const TittleContainer = styled.div`
   display: flex;
   flex-direction: column;
-`;
+`
 export const OrderInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -28,14 +28,14 @@ export const OrderInfoContainer = styled.div`
   padding: 2.5rem;
   border: 1px solid ${(props) => props.theme["purple"]};
   border-radius: 6px 36px 6px 36px;
-`;
+`
 export const ItemContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
-`;
+`
 
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-`;
+`

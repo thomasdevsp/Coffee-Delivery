@@ -1,8 +1,8 @@
-import { Route, Routes } from "react-router-dom";
-import { DefaultLayout } from "./layout/DefaultLayout";
-import { Home } from "./pages/Home";
-import { Checkout } from "./pages/Checkout";
-import { Success } from "./pages/Success";
+import { Route, Routes } from "react-router-dom"
+import { DefaultLayout } from "./layout/DefaultLayout"
+import { Home } from "./pages/Home"
+import { Checkout } from "./pages/Checkout"
+import { Success } from "./pages/Success"
 
 export function Router() {
   return (
@@ -13,5 +13,5 @@ export function Router() {
         <Route path="/Success" element={<Success />} />
       </Route>
     </Routes>
-  );
+  )
 }

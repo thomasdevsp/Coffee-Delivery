@@ -1,13 +1,13 @@
-import Logo from "../../assets/introduction/Logo.svg";
-import { MapPin, ShoppingCart } from "@phosphor-icons/react";
+import Logo from "../../assets/introduction/Logo.svg"
+import { MapPin, ShoppingCart } from "@phosphor-icons/react"
 import {
   ActionsContainer,
   HeaderContainer,
   Location,
   MarketCar,
-} from "./styles";
-import { NavLink } from "react-router-dom";
-import { TextSRoboto } from "../../styles/texts/textThemes";
+} from "./styles"
+import { NavLink } from "react-router-dom"
+import { TextSRoboto } from "../../styles/texts/textThemes"
 
 export function Header() {
   return (
@@ -28,5 +28,5 @@ export function Header() {
         </MarketCar>
       </ActionsContainer>
     </HeaderContainer>
-  );
+  )
 }
